@@ -1,5 +1,114 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1155203579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4228880121059091133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0bf9d452cf75644fad61c2788df957e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movement:
+    m_Name: Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5c43962e-5145-479e-a38c-09179dd815da
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector (WSAD)
+      m_Id: 0b574cd4-5296-4303-b415-c4242ec3b4f3
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 615adeb2-f9a3-46ad-9f90-3f6c454c4aa4
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 043ed333-0bed-4244-a0d1-d87aee39fdd3
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: left
+      m_Id: cdae01bf-0211-4a24-9d78-6798447591f7
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: right
+      m_Id: ad7c3878-730e-4177-a51f-934383ee890f
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: 2D Vector (Arrow Keys)
+      m_Id: 2fd04dda-29f0-45d1-bcae-22ff8daadd2f
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 5d66c6c0-7579-4044-9074-d2788885e483
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 632cae3f-f1e6-4347-af28-a00f93e83ea8
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 86cc5eb8-9230-4026-ba1b-86c7ac4661a2
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: right
+      m_Id: c6f5a66b-753d-4630-b5ef-12e8a391c09c
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 8
+    - m_Name: 
+      m_Id: 15493632-77a9-43e5-84ab-bf50353efddc
+      m_Path: <Gamepad>/leftStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Movement
+      m_Flags: 0
+  _controlsSpeed: 5
 --- !u!1 &4230527108234155657
 GameObject:
   m_ObjectHideFlags: 0
@@ -25,13 +134,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4230527108234155657}
-  m_LocalRotation: {x: 0.040721245, y: -0, z: -0, w: 0.99917054}
-  m_LocalPosition: {x: 0, y: 3.88, z: -5.56}
+  m_LocalRotation: {x: 0.09722806, y: -0.000000014901163, z: -2.3283067e-10, w: 0.99526215}
+  m_LocalPosition: {x: -0, y: 5.62, z: -9.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4230527109460689923}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 4.668, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.159, y: 0, z: 0}
 --- !u!20 &4230527108234155659
 Camera:
   m_ObjectHideFlags: 0
@@ -243,6 +352,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5730682458553686864, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730682458553686864, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730682458553686864, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730682458553686864, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -252,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730682458553686864, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 5730682458553686864, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -288,6 +409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
+--- !u!1 &4228880121059091133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5732021668406873414, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
+  m_PrefabInstance: {fileID: 8447692177090015227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4232048926866044075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5730682458553686864, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
