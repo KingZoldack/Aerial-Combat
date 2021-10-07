@@ -473,7 +473,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1155203579, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
       propertyPath: _xRange
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155203579, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
+      propertyPath: _controlRollFactor
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 4230527109460689922, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
       propertyPath: m_Name
