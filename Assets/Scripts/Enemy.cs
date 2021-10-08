@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] ParticleSystem _explosionParticles;
     [SerializeField] ParticleSystem _hitParticles;
+    [SerializeField] AudioSource _audioSource;
 
     Rigidbody _rb;
 
@@ -45,6 +46,7 @@ public class Enemy : MonoBehaviour
 
     private void DestroyEnemy()
     {
+        _audioSource.Play();
         _explosionParticles.Play();
         Destroy(gameObject, 0.5f);
     }
