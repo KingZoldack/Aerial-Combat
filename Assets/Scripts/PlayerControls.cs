@@ -6,16 +6,31 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour
 {
-    [SerializeField]
-    GameObject[] _lasers;
+    
+    //Configuration Parameters
+    [Header("General Configurations")]
+    [Tooltip("Set how fast the player's ship moves up and down.")][SerializeField] float _controlsSpeed = 20f;
+    [Tooltip("Set how far the player's ship can go on the X Axis.")][SerializeField] float _xRange = 3f;
+    [Tooltip("Set how far the player's ship can go on the Y Axis.")][SerializeField] float _yRange = 5f;
 
-    [SerializeField]
-    InputAction _movement, _firing;
+    [Header("Screen Position Based Tuning")]
+    [SerializeField] float _positionPitchFactor = -2f;
+    [SerializeField] float _positionYawFactor = -10f;
 
-    [SerializeField]
-    float _controlsSpeed = 20f, _xRange = 3f, _yRange = 5f, _positionPitchFactor = -2f, _controlPitchFactor = -20f, _positionYawFactor = -10f, _controlRollFactor = -40f;
+    [Header("Player Input Based Tuning")]
+    [SerializeField] float _controlPitchFactor = -20f;
+    [SerializeField] float _controlRollFactor = -40f;
 
     float xThrow, yThrow;
+
+    //Cached References
+    [Header("Laser Gun Array")]
+    [Tooltip("Add all player lasers here.")][SerializeField] ParticleSystem[] _lasers;
+
+    //Input Management
+    [Header("Input Management")]
+    [SerializeField] InputAction _movement;
+    [SerializeField] InputAction _firing;
 
     // Start is called before the first frame update
     void Start()
@@ -76,29 +91,22 @@ public class PlayerControls : MonoBehaviour
     {
         if (_firing.ReadValue<float>() > 0.5)
         {
-            ActivateLasers();
+            SetLasersActive(true);
         }
 
         else
         {
-            DeactivateLasers();
+            SetLasersActive(false);
         }
-
     }
 
-    void ActivateLasers()
+    void SetLasersActive(bool setActive)
     {
         foreach (var laser in _lasers)
         {
-            laser.SetActive(true);
+            var emissionModule = laser.emission;
+            emissionModule.enabled = setActive;
         }
     }
 
-    void DeactivateLasers()
-    {
-        foreach (var laser in _lasers)
-        {
-            laser.SetActive(false);
-        }
-    }
 }
