@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour
 {
-    
+    public static PlayerControls instance;
+
     //Configuration Parameters
     [Header("General Configurations")]
     [Tooltip("Set how fast the player's ship moves up and down.")][SerializeField] float _controlsSpeed = 20f;
@@ -27,11 +28,21 @@ public class PlayerControls : MonoBehaviour
     [Header("Laser Gun Array")]
     [Tooltip("Add all player lasers here.")][SerializeField] ParticleSystem[] _lasers;
 
+    // States
+    bool _canMove = true;
+
     //Input Management
     [Header("Input Management")]
     [SerializeField] InputAction _movement;
     [SerializeField] InputAction _firing;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -53,9 +64,13 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessTranslation();
-        ProcessRotation();
-        ProcessFiring();
+        if (_canMove)
+        {
+            ProcessTranslation();
+            ProcessRotation();
+            ProcessFiring();
+        }
+        
     }
 
     private void ProcessTranslation()
@@ -109,4 +124,8 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    public void TriggerMovement()
+    {
+        _canMove = false;
+    }
 }

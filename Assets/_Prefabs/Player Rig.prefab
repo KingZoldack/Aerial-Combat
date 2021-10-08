@@ -162,6 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb5897be5fb0814fb48ad3457f6c338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadDelay: 1.5
+  _playerMeshRenderers: []
+  _explosionParticles: {fileID: 496013883610508431}
 --- !u!1 &4230527108234155657
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +591,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8349122549733376883, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
 --- !u!1 &4228880121059091133 stripped
@@ -598,5 +605,10 @@ GameObject:
 --- !u!4 &4232048926866044075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5730682458553686864, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
+  m_PrefabInstance: {fileID: 8447692177090015227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &496013883610508431 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8349122549733376884, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
   m_PrefabInstance: {fileID: 8447692177090015227}
   m_PrefabAsset: {fileID: 0}

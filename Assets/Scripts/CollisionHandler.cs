@@ -1,16 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    //Config Params
+    [SerializeField] float _loadDelay = 1.5f;
+    [SerializeField] MeshRenderer[] _playerMeshRenderers;
+
+    //Cached Refs.
+    [SerializeField] ParticleSystem _explosionParticles;
+
+    private void Awake()
+    {
+        _playerMeshRenderers = GetComponentsInChildren<MeshRenderer>();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit " + other.name);
+        CrashHandler();
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Hit " + other.gameObject.name);
+        CrashHandler();
+    }
+
+    void CrashHandler()
+    {
+        PlayerControls.instance.TriggerMovement();
+        _explosionParticles.Play();
+        DisableMeshes();
+        Invoke("ReloadLevel", _loadDelay);
+    }
+
+    void ReloadLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    void DisableMeshes()
+    {
+        foreach (var mesh in _playerMeshRenderers)
+        {
+            mesh.enabled = false;
+        }
     }
 }
