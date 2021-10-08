@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerControls : MonoBehaviour
 {
     [SerializeField]
-    InputAction _movement;
+    InputAction _movement, _firing;
 
     [SerializeField]
     float _controlsSpeed = 20f, _xRange = 3f, _yRange = 5f, _positionPitchFactor = -2f, _controlPitchFactor = -20f, _positionYawFactor = -10f, _controlRollFactor = -40f;
@@ -21,12 +21,14 @@ public class PlayerControls : MonoBehaviour
 
     private void OnEnable()
     {
-        _movement.Enable(); 
+        _movement.Enable();
+        _firing.Enable();
     }
 
     private void OnDisable()
     {
         _movement.Disable();
+        _firing.Disable();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class PlayerControls : MonoBehaviour
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
     }
 
     private void ProcessTranslation()
@@ -63,5 +66,19 @@ public class PlayerControls : MonoBehaviour
               yaw = yawDeutToPosition,
               roll = rollDueToControlThrow;
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+
+    void ProcessFiring()
+    {
+        if (_firing.ReadValue<float>() > 0.5)
+        {
+            Debug.Log("Is Shooting");
+        }
+
+        else
+        {
+            Debug.Log("Not Shooting");
+        }
+
     }
 }
