@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!54 &1202454762
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4228880121059091133}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
 --- !u!114 &1155203579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,9 +28,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0bf9d452cf75644fad61c2788df957e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _controlsSpeed: 20
+  _xRange: 3
+  _yRange: 5
+  _positionPitchFactor: -2
+  _positionYawFactor: -10
+  _controlPitchFactor: -20
+  _controlRollFactor: -40
   _lasers:
-  - {fileID: 975122646146690905}
-  - {fileID: 8637823407348181256}
+  - {fileID: 2714737966532647631}
+  - {fileID: 6916207083733392542}
   _movement:
     m_Name: Movement
     m_Type: 0
@@ -127,13 +150,18 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Firing
       m_Flags: 0
-  _controlsSpeed: 20
-  _xRange: 3
-  _yRange: 5
-  _positionPitchFactor: -2
-  _controlPitchFactor: -20
-  _positionYawFactor: -10
-  _controlRollFactor: -40
+--- !u!114 &1202454761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4228880121059091133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb5897be5fb0814fb48ad3457f6c338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4230527108234155657
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser Left
       objectReference: {fileID: 0}
+    - target: {fileID: 3227168944903115906, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4637528290226038572, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -326,9 +358,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
---- !u!1 &975122646146690905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 355166599083041044, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
+--- !u!198 &2714737966532647631 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3227168944903115906, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
   m_PrefabInstance: {fileID: 677117479258852941}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8300829813890304028
@@ -380,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3227168944903115906, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3227168944903115906, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -480,9 +512,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
---- !u!1 &8637823407348181256 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 355166599083041044, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
+--- !u!198 &6916207083733392542 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3227168944903115906, guid: 7a89a524855dbf44eac34667fe5a15bb, type: 3}
   m_PrefabInstance: {fileID: 8300829813890304028}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8447692177090015227
@@ -551,6 +583,10 @@ PrefabInstance:
     - target: {fileID: 5732021668406873414, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
       propertyPath: m_Name
       value: Player Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732021668406873414, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43870d4a229c2d34e86ea662025706ae, type: 3}
