@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] int _increaseScoreAmount = 10;
+
     [SerializeField] ParticleSystem _explosionParticles;
 
     MeshRenderer _meshRenderer;
@@ -15,8 +17,21 @@ public class Enemy : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        ProcessHit();
+        DestroyEnemy();
+    }
+
+    private void ProcessHit()
+    {
+        Score.instance.IncreaseScore(_increaseScoreAmount);
+    }
+
+    private void DestroyEnemy()
+    {
         _explosionParticles.Play();
         _meshRenderer.enabled = false;
         Destroy(gameObject, 1f);
     }
+
+    
 }
