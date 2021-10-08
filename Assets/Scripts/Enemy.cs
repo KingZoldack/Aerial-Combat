@@ -16,6 +16,11 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        AddRigidbody();
+    }
+
+    private void AddRigidbody()
+    {
         _rb = gameObject.AddComponent<Rigidbody>();
         _rb.useGravity = false;
     }

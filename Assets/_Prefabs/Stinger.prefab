@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increaseScoreAmount: 10
-  _hitPoints: 3
+  _hitPoints: 2
   _explosionParticles: {fileID: 3200836326177300430}
   _hitParticles: {fileID: 2952209692866134880}
 --- !u!1 &1240146308500008668
