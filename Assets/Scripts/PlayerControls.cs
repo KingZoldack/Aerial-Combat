@@ -9,7 +9,7 @@ public class PlayerControls : MonoBehaviour
     InputAction _movement;
 
     [SerializeField]
-    float _controlsSpeed = 5f, _xRange = 5f, _yRange = 5f, _positionPitchFactor = -2f, _controlPitchFactor = -10f, _positionYawFactor = -10f, _controlRollFactor = -10f;
+    float _controlsSpeed = 20f, _xRange = 3f, _yRange = 5f, _positionPitchFactor = -2f, _controlPitchFactor = -20f, _positionYawFactor = -10f, _controlRollFactor = -40f;
 
     float xThrow, yThrow;
 

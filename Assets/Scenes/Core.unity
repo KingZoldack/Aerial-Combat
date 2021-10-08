@@ -244,8 +244,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113285243}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.0042298804, y: 0.9473107, z: 0.012494105, w: 0.32004476}
+  m_LocalPosition: {x: 207.07864, y: 70.26871, z: 475.39813}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -471,13 +471,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1155203579, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
-      propertyPath: _xRange
+    - target: {fileID: 2714737966532647631, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1155203579, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
-      propertyPath: _controlRollFactor
-      value: -40
+    - target: {fileID: 2714737966532647631, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4230527109460689922, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
       propertyPath: m_Name
@@ -526,6 +526,18 @@ PrefabInstance:
     - target: {fileID: 4230527109460689923, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916207083733392542, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916207083733392542, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916207083733392542, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71daad9cce6e2d945a1e3e57d64af148, type: 3}
