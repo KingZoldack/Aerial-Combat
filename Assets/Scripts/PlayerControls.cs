@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour
 {
+    [SerializeField]
+    GameObject[] _lasers;
+
     [SerializeField]
     InputAction _movement, _firing;
 
@@ -72,13 +76,29 @@ public class PlayerControls : MonoBehaviour
     {
         if (_firing.ReadValue<float>() > 0.5)
         {
-            Debug.Log("Is Shooting");
+            ActivateLasers();
         }
 
         else
         {
-            Debug.Log("Not Shooting");
+            DeactivateLasers();
         }
 
+    }
+
+    void ActivateLasers()
+    {
+        foreach (var laser in _lasers)
+        {
+            laser.SetActive(true);
+        }
+    }
+
+    void DeactivateLasers()
+    {
+        foreach (var laser in _lasers)
+        {
+            laser.SetActive(false);
+        }
     }
 }
